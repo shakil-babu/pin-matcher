@@ -7,6 +7,7 @@ function btnIdName(idName, callback){
 let showRandom = document.getElementById('show-random-numbers');
 var generateButton = btnIdName('generate-btn', function(){
 	let randomNumbers = parseInt(Math.floor(1000 + Math.random() * 9000));
+	document.querySelector('.action-left').innerHTML = '3 try left'
 	showRandom.value = randomNumbers ;
 	// after click and hide
 	document.getElementById('pin-match').style.display = 'none';
@@ -43,12 +44,13 @@ if(showRandom.value == ''){
 	document.getElementById('pin-not-match').style.display = 'none';
 	displayValue.value = '';
 	showRandom.value = '';
+	
 }else{
 	document.getElementById('pin-not-match').style.display = 'block';
 	document.getElementById('pin-match').style.display = 'none';
 	
 	// for action-left
-	if(count < 0){
+	if(count < 1){
 	document.querySelector('.action-left').innerHTML = 'No more try'
 	displayValue.value = '';
 	showRandom.value = '';
